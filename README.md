@@ -10,55 +10,53 @@ The goal is to analyze how people feel (Positive, Negative, Neutral, Irrelevant)
 
 Files Used:
 
-twitter_training.csv
+  twitter_training.csv
 
-twitter_validation.csv
+  twitter_validation.csv
 
 Columns:
 
-id → Tweet ID
+  id → Tweet ID
 
-entity → Topic/brand being discussed
+  entity → Topic/brand being discussed
 
-sentiment → Sentiment label (Positive, Negative, Neutral, Irrelevant)
+  sentiment → Sentiment label (Positive, Negative, Neutral, Irrelevant)
 
-text → Tweet content
+  text → Tweet content
 
 ⚙️ Steps in the Project
 
-Load Data
+1) Load Data
 
-Read Twitter datasets into Pandas.
+ Read Twitter datasets into Pandas.
 
-Preprocessing & Cleaning
+2) Preprocessing & Cleaning
 
-Remove URLs, mentions (@user), hashtags, punctuation.
+ Remove URLs, mentions (@user), hashtags, punctuation.
+ Convert text to lowercase.
+ Fill missing values.
 
-Convert text to lowercase.
+3) Feature Extraction
 
-Fill missing values.
+  Use TF-IDF Vectorizer (top 5000 words) to convert tweets into numerical vectors.
 
-Feature Extraction
+4) Model Training
 
-Use TF-IDF Vectorizer (top 5000 words) to convert tweets into numerical vectors.
+ Train a Logistic Regression classifier on training data.
 
-Model Training
+5) Evaluation
 
-Train a Logistic Regression classifier on training data.
+  Accuracy score.
 
-Evaluation
+  Classification report (precision, recall, F1).
 
-Accuracy score.
+  Confusion matrix heatmap.
 
-Classification report (precision, recall, F1).
+6) Visualization
 
-Confusion matrix heatmap.
+  Sentiment distribution (bar chart).
 
-Visualization
-
-Sentiment distribution (bar chart).
-
-Word Clouds for Positive, Negative, Neutral tweets.
+  Word Clouds for Positive, Negative, Neutral tweets.
 
 📊 Results
 
@@ -66,10 +64,10 @@ Accuracy: ~80–85% (varies by dataset split).
 
 Insights:
 
-Positive tweets contain words like “love, great, happy”.
+  Positive tweets contain words like “love, great, happy”.
 
-Negative tweets highlight “bad, hate, worst”.
+  Negative tweets highlight “bad, hate, worst”.
 
-Neutral tweets often contain factual statements.
+  Neutral tweets often contain factual statements.
 
-Most errors happen between Neutral and Irrelevant tweets (because their language overlaps).
+-- Most errors happen between Neutral and Irrelevant tweets (because their language overlaps).
